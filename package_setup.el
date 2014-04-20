@@ -8,16 +8,18 @@
 
 (provide 'package_setup)
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; first require all of the packages that package requires
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
-
+ 
 (require 'cl)
 (require 'cl-lib)
 (require 'popup)
+(require 'auto-complete)
 (require 'auto-complete-config)
-;;(require 'ert)
+;;(require 'ert) # now included in emacs...which version?
+(require 'deferred)
 (require 'python-environment)
 
 (require 'package)
@@ -40,19 +42,6 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; http://wikemacs.org/index.php/El-get
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-;; 
-;; (unless (require 'el-get nil t)
-;;   (url-retrieve
-;;    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-;;    (lambda (s)
-;;      (end-of-buffer)
-;;      (eval-print-last-sexp))))
-;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
 ;;  instantly deploy packages on any OS/machine 
@@ -131,3 +120,17 @@
 (provide 'prelude-packages)
 ;;; prelude-packages.el ends here
 
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; http://wikemacs.org/index.php/El-get
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;; 
+;; (unless (require 'el-get nil t)
+;;   (url-retrieve
+;;    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+;;    (lambda (s)
+;;      (end-of-buffer)
+;;      (eval-print-last-sexp))))
+;; 

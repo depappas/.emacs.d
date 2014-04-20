@@ -2,7 +2,7 @@
 ;; name the package
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(provides python_setup)
+(provide 'python_setup)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; https://github.com/kiwanami/emacs-epc
