@@ -1,4 +1,4 @@
 .emacs.d
 ========
 
-Eamcs setup files
+Emacs setup files
